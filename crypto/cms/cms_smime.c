@@ -886,6 +886,7 @@ int CMS_final(CMS_ContentInfo *cms, BIO *data, BIO *dcont, unsigned int flags)
     if (!SMIME_crlf_copy(data, cmsbio, flags)) {
         goto err;
     }
+    SMIME_crlf_copy(data, cmsbio, flags);
 
     (void)BIO_flush(cmsbio);
 
